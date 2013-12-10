@@ -7,6 +7,7 @@ License: LGPL
 URL: http://github.com/nemomobile
 Source: %{name}-%{version}.tar.bz2
 BuildRequires: pkgconfig(libresource-glib)
+BuildRequires: cmake
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 

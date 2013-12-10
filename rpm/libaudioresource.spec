@@ -27,7 +27,7 @@ This package contains the development library for %{name}.
 %setup -q
 
 %build
-%cmake
+%cmake -DLIB_DEST=lib
 make
 
 %install

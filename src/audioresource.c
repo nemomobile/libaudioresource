@@ -69,10 +69,7 @@ audioresource_t *audioresource_init(enum audioresource_type_t type,
             type_str = "game";
             break;
         case AUDIO_RESOURCE_MEDIA:
-            //type_str = "media";
-            // XXX: Workaround for now, as the backend doesn't
-            // know about "media" yet
-            type_str = "game";
+            type_str = "player";
             break;
         default:
             /* Invalid audio resource type */

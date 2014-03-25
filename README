@@ -18,6 +18,24 @@ should use this library - lower-level libraries such as libresource (which this
 library currently uses as its backend) are considered an implementation detail
 and could be replaced or removed in the future.
 
+Please note that you need to have a GLib main loop running to use the functions
+of libaudioresource, as it's asynchronous and uses GLib in the backend. If your
+application is a Qt application, it automatically has a GLib main loop. If your
+application doesn't use a GLib main loop, you can use:
+
+    // ...
+    audioresource_acquire(resource);
+    while (!got_reply) {
+        g_main_context_iteration(NULL, false);
+    }
+    // ...
+
+And in the callback, set the "got_reply" variable to true, so you know when
+the reply is done. If you don't want to wait for a reply, you can also add
+the following to your custom main loop, once per iteration:
+
+    g_main_context_iteration(NULL, false);
+
 
 Example Usage
 -------------

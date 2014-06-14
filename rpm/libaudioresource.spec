@@ -1,5 +1,5 @@
 Name: libaudioresource
-Version: 1.0.0
+Version: 1.0.4
 Release: 1
 Summary: Nemo Mobile Audio Resource API
 Group: Development/Libraries

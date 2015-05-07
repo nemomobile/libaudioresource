@@ -63,6 +63,9 @@ audioresource_t *audioresource_init(enum audioresource_type_t type,
         audioresource_acquired_callback_t acquired_cb,
         void *user_data)
 {
+    // XXX: Workaround for bugs like MAEMO#7159
+    setenv("PULSE_PROP_media.role", "x-maemo", 1);
+
     const char *type_str;
     switch (type) {
         case AUDIO_RESOURCE_GAME:
